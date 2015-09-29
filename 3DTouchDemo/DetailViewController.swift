@@ -10,38 +10,44 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    // MARK: - Properties
 
-    // Property to hold the detail item's title.
+    @IBOutlet var detailDescriptionLabel: UILabel!
+
+    /// Property to hold the detail item's title.
     var detailItemTitle: String?
 
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
-            self.configureView()
+            configureView()
         }
     }
 
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
-    }
+    // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+
+        configureView()
+
+        // Set up the detail view's `navigationItem`.
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK: - Private
 
+    private func configureView() {
+        if let title = detailItemTitle {
+            self.title = title
+        }
+
+        // Update the user interface for the detail item.
+        if let detail = detailItem {
+            detailDescriptionLabel.text = detail.description
+        }
+    }
 
 }
 
