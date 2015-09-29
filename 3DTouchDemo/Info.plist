@@ -63,7 +63,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Static Quick Action</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).static</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Static</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
 			<dict>
 				<key>secondShortcutKey1</key>
@@ -78,7 +78,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Engage Hyperdrive</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).hyperdrive</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Hyperdrive</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
 			<dict>
 				<key>url</key>
