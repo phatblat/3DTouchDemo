@@ -12,6 +12,8 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
+    // Property to hold the detail item's title.
+    var detailItemTitle: String?
 
     var detailItem: AnyObject? {
         didSet {
