@@ -41,7 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var window: UIWindow?
 
     /// Saved shortcut item used as a result of an app launch, used later when app is activated.
-    var launchedShortcutItem: UIApplicationShortcutItem?
+    //    @available(iOS 9, *)
+//    var launchedShortcutItem: UIApplicationShortcutItem?
+    var launchedShortcutItem: AnyObject?
 
     // MARK: - App Lifecycle
 
@@ -55,30 +57,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Override point for customization after application launch.
         var shouldPerformAdditionalDelegateHandling = true
 
-        // If a shortcut was launched, display its information and take the appropriate action
-        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem {
+        if #available(iOS 9, *) {
+            // If a shortcut was launched, display its information and take the appropriate action
+            if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem {
 
-            launchedShortcutItem = shortcutItem
+                launchedShortcutItem = shortcutItem
 
-            // This will block "performActionForShortcutItem:completionHandler" from being called.
-            shouldPerformAdditionalDelegateHandling = false
-        }
+                // This will block "performActionForShortcutItem:completionHandler" from being called.
+                shouldPerformAdditionalDelegateHandling = false
+            }
 
-        // Install initial versions of our two extra dynamic shortcuts.
-        if let shortcutItems = application.shortcutItems where shortcutItems.isEmpty {
-            // Construct the items.
-            let shortcut3 = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.Third.type, localizedTitle: "Play", localizedSubtitle: "Will Play an item", icon: UIApplicationShortcutIcon(type: .Play), userInfo: [
-                AppDelegate.applicationShortcutUserInfoIconKey: UIApplicationShortcutIconType.Play.rawValue
-                ]
-            )
+            // Install initial versions of our two extra dynamic shortcuts.
+            if let shortcutItems = application.shortcutItems where shortcutItems.isEmpty {
+                // Construct the items.
+                let shortcut3 = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.Third.type, localizedTitle: "Play", localizedSubtitle: "Will Play an item", icon: UIApplicationShortcutIcon(type: .Play), userInfo: [
+                    AppDelegate.applicationShortcutUserInfoIconKey: UIApplicationShortcutIconType.Play.rawValue
+                    ]
+                )
 
-            let shortcut4 = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.Fourth.type, localizedTitle: "Pause", localizedSubtitle: "Will Pause an item", icon: UIApplicationShortcutIcon(type: .Pause), userInfo: [
-                AppDelegate.applicationShortcutUserInfoIconKey: UIApplicationShortcutIconType.Pause.rawValue
-                ]
-            )
+                let shortcut4 = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.Fourth.type, localizedTitle: "Pause", localizedSubtitle: "Will Pause an item", icon: UIApplicationShortcutIcon(type: .Pause), userInfo: [
+                    AppDelegate.applicationShortcutUserInfoIconKey: UIApplicationShortcutIconType.Pause.rawValue
+                    ]
+                )
 
-            // Update the application providing the initial 'dynamic' shortcut items.
-            application.shortcutItems = [shortcut3, shortcut4]
+                // Update the application providing the initial 'dynamic' shortcut items.
+                application.shortcutItems = [shortcut3, shortcut4]
+            }
         }
 
         return shouldPerformAdditionalDelegateHandling
@@ -87,7 +91,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationDidBecomeActive(application: UIApplication) {
         guard let shortcut = launchedShortcutItem else { return }
 
-        handleShortCutItem(shortcut)
+        if #available(iOS 9, *) {
+            guard let shortcut = shortcut as? UIApplicationShortcutItem else { return }
+            handleShortCutItem(shortcut)
+        }
 
         launchedShortcutItem = nil
     }
@@ -96,6 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     /// application(_:,willFinishLaunchingWithOptions:) or application(_:didFinishLaunchingWithOptions) returns `false`.
     /// You should handle the shortcut in those callbacks and return `false` if possible. In that case, this
     /// callback is used if your application is already launched in the background.
+    @available(iOS 9, *)
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: Bool -> Void) {
         let handledShortCutItem = handleShortCutItem(shortcutItem)
 
@@ -116,6 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     // MARK: - Private
 
+    @available(iOS 9, *)
     private func handleShortCutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
         var handled = false
 

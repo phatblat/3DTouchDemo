@@ -42,17 +42,20 @@ class MasterViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
 
-        // Check for force touch feature, and add force touch/previewing capability.
-        if traitCollection.forceTouchCapability == .Available {
-            // Register for `UIViewControllerPreviewingDelegate` to enable "Peek" and "Pop".
-            // (see: MasterViewController+UIViewControllerPreviewing.swift)
-            //
-            // The view controller will be automatically unregistered when it is deallocated.
-            registerForPreviewingWithDelegate(self, sourceView: view)
-        }
-        else {
-            // Create an alert to display to the user.
-            alertController = UIAlertController(title: "3D Touch Not Available", message: "Unsupported device.", preferredStyle: .Alert)
+
+        if #available(iOS 9, *) {
+            // Check for force touch feature, and add force touch/previewing capability.
+            if traitCollection.forceTouchCapability == .Available {
+                // Register for `UIViewControllerPreviewingDelegate` to enable "Peek" and "Pop".
+                // (see: MasterViewController+UIViewControllerPreviewing.swift)
+                //
+                // The view controller will be automatically unregistered when it is deallocated.
+                registerForPreviewingWithDelegate(self, sourceView: view)
+            }
+            else {
+                // Create an alert to display to the user.
+                alertController = UIAlertController(title: "3D Touch Not Available", message: "Unsupported device.", preferredStyle: .Alert)
+            }
         }
     }
 

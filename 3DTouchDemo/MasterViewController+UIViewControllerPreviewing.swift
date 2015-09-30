@@ -10,7 +10,7 @@ import UIKit
 
 extension MasterViewController: UIViewControllerPreviewingDelegate {
 
-    // MARK: -UIViewControllerPreviewingDelegate
+    // MARK: - UIViewControllerPreviewingDelegate
 
     /// Create a previewing view controller to be shown at "Peek".
     func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -28,8 +28,10 @@ extension MasterViewController: UIViewControllerPreviewingDelegate {
         // Width should be zero, because it's not used in portrait.
         detailViewController.preferredContentSize = CGSize(width: 0.0, height: previewDetail.preferredHeight)
 
-        // Set the source rect to the cell frame, so surrounding elements are blurred.
-        previewingContext.sourceRect = cell.frame
+        if #available(iOS 9, *) {
+            // Set the source rect to the cell frame, so surrounding elements are blurred.
+            previewingContext.sourceRect = cell.frame
+        }
 
         return detailViewController
     }
