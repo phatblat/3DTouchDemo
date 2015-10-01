@@ -32,7 +32,11 @@ class MasterViewController: UITableViewController {
         PreviewDetail(title: "Large", preferredHeight: 0.0) // 0.0 to get the default height.
     ]
 
-    // MARK: - UIViewController
+}
+
+// MARK: - UIViewController
+
+extension MasterViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +94,11 @@ class MasterViewController: UITableViewController {
         }
     }
 
-    // MARK: - UITableViewDataSource
+}
+
+// MARK: - UITableViewDataSource
+
+extension MasterViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sampleData.count
@@ -106,4 +114,3 @@ class MasterViewController: UITableViewController {
     }
 
 }
-
