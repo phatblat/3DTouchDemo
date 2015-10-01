@@ -37,8 +37,6 @@ extension MasterViewController: UIViewControllerPreviewingDelegate {
 extension MasterViewController {
 
     private func viewControllerForIndexPath(indexPath: NSIndexPath) -> UIViewController? {
-        let touchCanvasRow = 3
-
         switch indexPath.row {
         case 0..<touchCanvasRow:
             // Create a detail view controller and set its properties.

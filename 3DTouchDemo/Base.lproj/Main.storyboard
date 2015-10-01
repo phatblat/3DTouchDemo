@@ -136,9 +136,6 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -148,6 +145,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="3D Touch Demo" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="JCs-Az-kUJ"/>
+                        <segue destination="GMP-Cd-GcX" kind="showDetail" identifier="touchCanvas" id="pIo-l4-Jze"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,6 +172,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="JCs-Az-kUJ"/>
     </inferredMetricsTieBreakers>
 </document>

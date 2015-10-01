@@ -33,6 +33,8 @@ class MasterViewController: UITableViewController {
         PreviewDetail(title: "TouchCanvas", preferredHeight: 0.0)
     ]
 
+    let touchCanvasRow = 3
+
 }
 
 // MARK: - UIViewController
@@ -111,6 +113,23 @@ extension MasterViewController {
         cell.textLabel!.text = previewDetail.title
 
         return cell
+    }
+
+}
+
+// MARK: - UITableViewDelegate
+
+extension MasterViewController {
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case 0..<touchCanvasRow:
+            performSegueWithIdentifier("showDetail", sender: self)
+        case touchCanvasRow:
+            performSegueWithIdentifier("touchCanvas", sender: self)
+        default:
+            print("Unhandled indexPath \(indexPath)")
+        }
     }
 
 }
