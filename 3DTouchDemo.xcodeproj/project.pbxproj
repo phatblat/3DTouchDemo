@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F88127B11BBCE48100B6290C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88127AD1BBCE48100B6290C /* CanvasView.swift */; };
+		F88127B21BBCE48100B6290C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88127AE1BBCE48100B6290C /* Line.swift */; };
+		F88127B31BBCE48100B6290C /* ReticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88127AF1BBCE48100B6290C /* ReticleView.swift */; };
+		F88127B41BBCE48100B6290C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88127B01BBCE48100B6290C /* ViewController.swift */; };
 		F8F8795C1BBA18F9009EF130 /* MasterViewController+UIViewControllerPreviewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F8795B1BBA18F9009EF130 /* MasterViewController+UIViewControllerPreviewing.swift */; };
 		F8FB196C1BB7861A00DC8EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB196B1BB7861A00DC8EDE /* AppDelegate.swift */; };
 		F8FB196E1BB7861A00DC8EDE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB196D1BB7861A00DC8EDE /* MasterViewController.swift */; };
@@ -18,6 +22,10 @@
 
 /* Begin PBXFileReference section */
 		F863CC801BBCB125009F0D0C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F88127AD1BBCE48100B6290C /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasView.swift; path = TouchCanvas/CanvasView.swift; sourceTree = "<group>"; };
+		F88127AE1BBCE48100B6290C /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = TouchCanvas/Line.swift; sourceTree = "<group>"; };
+		F88127AF1BBCE48100B6290C /* ReticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReticleView.swift; path = TouchCanvas/ReticleView.swift; sourceTree = "<group>"; };
+		F88127B01BBCE48100B6290C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = TouchCanvas/ViewController.swift; sourceTree = "<group>"; };
 		F8F8795B1BBA18F9009EF130 /* MasterViewController+UIViewControllerPreviewing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MasterViewController+UIViewControllerPreviewing.swift"; sourceTree = "<group>"; };
 		F8FB19681BB7861A00DC8EDE /* 3DTouchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3DTouchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FB196B1BB7861A00DC8EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +48,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F88127A41BBCE3FF00B6290C /* TouchCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				F88127AD1BBCE48100B6290C /* CanvasView.swift */,
+				F88127AE1BBCE48100B6290C /* Line.swift */,
+				F88127AF1BBCE48100B6290C /* ReticleView.swift */,
+				F88127B01BBCE48100B6290C /* ViewController.swift */,
+			);
+			path = TouchCanvas;
+			sourceTree = "<group>";
+		};
 		F8FB195F1BB7861A00DC8EDE = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +87,7 @@
 				F8FB19741BB7861A00DC8EDE /* Assets.xcassets */,
 				F8FB19761BB7861A00DC8EDE /* LaunchScreen.storyboard */,
 				F8FB19791BB7861A00DC8EDE /* Info.plist */,
+				F88127A41BBCE3FF00B6290C /* TouchCanvas */,
 			);
 			path = 3DTouchDemo;
 			sourceTree = "<group>";
@@ -144,8 +164,12 @@
 			files = (
 				F8FB19701BB7861A00DC8EDE /* DetailViewController.swift in Sources */,
 				F8FB196E1BB7861A00DC8EDE /* MasterViewController.swift in Sources */,
+				F88127B11BBCE48100B6290C /* CanvasView.swift in Sources */,
+				F88127B21BBCE48100B6290C /* Line.swift in Sources */,
 				F8FB196C1BB7861A00DC8EDE /* AppDelegate.swift in Sources */,
 				F8F8795C1BBA18F9009EF130 /* MasterViewController+UIViewControllerPreviewing.swift in Sources */,
+				F88127B41BBCE48100B6290C /* ViewController.swift in Sources */,
+				F88127B31BBCE48100B6290C /* ReticleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
