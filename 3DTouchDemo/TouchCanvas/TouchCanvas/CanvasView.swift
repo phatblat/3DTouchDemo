@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 9.1, *)
 class CanvasView: UIView {
     // MARK: Properties
     

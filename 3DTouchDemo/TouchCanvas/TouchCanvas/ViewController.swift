@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 9.1, *)
 class ViewController: UIViewController {
     // MARK: Properties
     
