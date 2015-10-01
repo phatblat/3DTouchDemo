@@ -57,6 +57,12 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
 
     override func previewActionItems() -> [UIPreviewActionItem] {
+        // Top level action
+        let action0 = UIPreviewAction(title: "Action 0", style: .Default) { (action: UIPreviewAction, vc: UIViewController) -> Void in
+            print("Action 0 triggered")
+        }
+
+        // Set up 3 actions under a group
         let action1 = UIPreviewAction(title: "Action 1", style: .Default) { (action: UIPreviewAction, vc: UIViewController) -> Void in
             print("Action 1 triggered")
         }
@@ -73,7 +79,7 @@ extension DetailViewController {
 
         let group = UIPreviewActionGroup(title: "Action Group", style: .Default, actions: actions)
         
-        return [group]
+        return [action0, group]
     }
     
 }
