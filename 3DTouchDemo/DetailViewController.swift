@@ -51,3 +51,29 @@ class DetailViewController: UIViewController {
 
 }
 
+// MARK: - Action Items for Preview (Peek)
+
+@available(iOS 9.0, *)
+extension DetailViewController {
+
+    override func previewActionItems() -> [UIPreviewActionItem] {
+        let action1 = UIPreviewAction(title: "Action 1", style: .Default) { (action: UIPreviewAction, vc: UIViewController) -> Void in
+            print("Action 1 triggered")
+        }
+
+        let selectedAction = UIPreviewAction(title: "Selected Action", style: .Selected) { (action: UIPreviewAction, vc: UIViewController) -> Void in
+            print("Selected action triggered")
+        }
+
+        let destructiveAction = UIPreviewAction(title: "Destructive Action", style: .Destructive) { (action: UIPreviewAction, vc: UIViewController) -> Void in
+            print("Destructive action triggered!")
+        }
+
+        let actions = [action1, selectedAction, destructiveAction]
+
+        let group = UIPreviewActionGroup(title: "Action Group", style: .Default, actions: actions)
+        
+        return [group]
+    }
+    
+}
