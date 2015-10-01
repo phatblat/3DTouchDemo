@@ -18,28 +18,47 @@ extension MasterViewController: UIViewControllerPreviewingDelegate {
         guard let indexPath = tableView.indexPathForRowAtPoint(location),
                   cell = tableView.cellForRowAtIndexPath(indexPath) else { return nil }
 
-        // Create a detail view controller and set its properties.
-        guard let detailViewController = storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as? DetailViewController else { return nil }
-
-        let previewDetail = sampleData[indexPath.row]
-        detailViewController.detailItemTitle = previewDetail.title
-
-        // Set the height of the preview by setting the preferred content size of the detail view controller.
-        // Width should be zero, because it's not used in portrait.
-        detailViewController.preferredContentSize = CGSize(width: 0.0, height: previewDetail.preferredHeight)
-
         if #available(iOS 9, *) {
             // Set the source rect to the cell frame, so surrounding elements are blurred.
             previewingContext.sourceRect = cell.frame
         }
 
-        return detailViewController
+        return viewControllerForIndexPath(indexPath)
     }
     
     /// Present the view controller for the "Pop" action.
     func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
         // Reuse the "Peek" view controller for presentation.
         showViewController(viewControllerToCommit, sender: self)
+    }
+
+}
+
+extension MasterViewController {
+
+    private func viewControllerForIndexPath(indexPath: NSIndexPath) -> UIViewController? {
+        let touchCanvasRow = 3
+
+        switch indexPath.row {
+        case 0..<touchCanvasRow:
+            // Create a detail view controller and set its properties.
+            guard let detailViewController = storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as? DetailViewController else { return nil }
+
+            let previewDetail = sampleData[indexPath.row]
+            detailViewController.detailItemTitle = previewDetail.title
+
+            // Set the height of the preview by setting the preferred content size of the detail view controller.
+            // Width should be zero, because it's not used in portrait.
+            detailViewController.preferredContentSize = CGSize(width: 0.0, height: previewDetail.preferredHeight)
+
+            return detailViewController
+
+        case touchCanvasRow:
+           return storyboard?.instantiateViewControllerWithIdentifier("TouchCanvasViewController")
+
+        default:
+            return nil
+        }
     }
 
 }

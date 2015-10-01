@@ -29,7 +29,8 @@ class MasterViewController: UITableViewController {
     let sampleData = [
         PreviewDetail(title: "Small", preferredHeight: 160.0),
         PreviewDetail(title: "Medium", preferredHeight: 320.0),
-        PreviewDetail(title: "Large", preferredHeight: 0.0) // 0.0 to get the default height.
+        PreviewDetail(title: "Large", preferredHeight: 0.0), // 0.0 to get the default height.
+        PreviewDetail(title: "TouchCanvas", preferredHeight: 0.0)
     ]
 
 }
@@ -45,7 +46,6 @@ extension MasterViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-
 
         if #available(iOS 9, *) {
             // Check for force touch feature, and add force touch/previewing capability.

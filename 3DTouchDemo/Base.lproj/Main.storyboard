@@ -60,6 +60,25 @@
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Lel-VY-FRg">
+            <objects>
+                <viewController storyboardIdentifier="TouchCanvasViewController" id="GMP-Cd-GcX" customClass="ViewController" customModule="_DTouchDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lyA-1e-BJC"/>
+                        <viewControllerLayoutGuide type="bottom" id="MOd-qi-ZGh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xt4-q9-GDR" customClass="CanvasView" customModule="_DTouchDemo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTM-6j-95m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1420" y="129"/>
+        </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
