@@ -71,8 +71,21 @@
                     <view key="view" contentMode="scaleToFill" id="xt4-q9-GDR" customClass="CanvasView" customModule="_DTouchDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw on me!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30d-XU-y3o">
+                                <rect key="frame" x="252" y="290" width="97" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="30d-XU-y3o" firstAttribute="centerX" secondItem="xt4-q9-GDR" secondAttribute="centerX" id="Ikb-yF-RnH"/>
+                            <constraint firstItem="30d-XU-y3o" firstAttribute="centerY" secondItem="xt4-q9-GDR" secondAttribute="centerY" id="Y35-Dy-J9w"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTM-6j-95m" userLabel="First Responder" sceneMemberID="firstResponder"/>
