@@ -4,7 +4,7 @@ An example of the various APIs which apps can use to leverage 3D Touch on the iP
 
 # References
 
-* [3D Touch](https://developer.apple.com/ios/3d-touch/) (overview)
+* [3D Touch Overview](https://developer.apple.com/ios/3d-touch/)
 * [HIG: 3D Touch](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/MobileHIG/3DTouch.html#//apple_ref/doc/uid/TP40006556-CH71)
 * [Adopting 3D Touch on iPhone](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/Adopting3DTouchOniPhone/)
 * Sample Code
