@@ -17,6 +17,7 @@ class ForceProgressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.progress = 0.0
+        view.backgroundColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0))
     }
 
 }
