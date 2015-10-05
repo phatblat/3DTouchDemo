@@ -12,7 +12,7 @@ extension MasterViewController: UIViewControllerPreviewingDelegate {
 
     // MARK: - UIViewControllerPreviewingDelegate
 
-    /// Create a previewing view controller to be shown at "Peek".
+    /// Create a previewing view controller to be shown as a "Peek".
     func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         // Obtain the index path and the cell that was pressed.
         guard let indexPath = tableView.indexPathForRowAtPoint(location),

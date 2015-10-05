@@ -77,7 +77,7 @@ extension DetailViewController {
 
         let actions = [action1, selectedAction, destructiveAction]
 
-        let group = UIPreviewActionGroup(title: "Action Group", style: .Default, actions: actions)
+        let group = UIPreviewActionGroup(title: "More Actions...", style: .Default, actions: actions)
         
         return [action0, group]
     }
