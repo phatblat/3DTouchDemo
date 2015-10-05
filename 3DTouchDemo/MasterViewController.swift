@@ -141,12 +141,12 @@ extension MasterViewController {
 
 extension MasterViewController {
 
-    /// Clears out dynamic quick actions
+    /// Removes dynamic quick actions
     @IBAction func didTapTrashButton() {
         if #available(iOS 9.0, *) {
             UIApplication.sharedApplication().shortcutItems = []
 
-            let message = "Dynamic quick actions have been cleared"
+            let message = "Dynamic quick actions have been removed"
             print(message)
 
             let alertController = UIAlertController(title: nil, message: message, preferredStyle: .Alert)
