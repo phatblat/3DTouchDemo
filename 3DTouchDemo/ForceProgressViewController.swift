@@ -16,7 +16,6 @@ class ForceProgressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         progressView.progress = 0.0
     }
 
@@ -28,33 +27,21 @@ extension ForceProgressViewController {
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-
-        guard #available(iOS 9.0, *) else { return }
-
         updateForTouches(touches)
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-
-        guard #available(iOS 9.0, *) else { return }
-
         updateForTouches(touches)
     }
 
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         super.touchesCancelled(touches, withEvent: event)
-
-        guard #available(iOS 9.0, *) else { return }
-
         updateForTouches(touches)
     }
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
-
-        guard #available(iOS 9.0, *) else { return }
-
         updateForTouches(touches)
     }
 
@@ -62,10 +49,10 @@ extension ForceProgressViewController {
 
 // MARK: - Private
 
-@available(iOS 9.0, *)
 extension ForceProgressViewController {
     
     private func updateForTouches(touches: Set<UITouch>?) {
+        guard #available(iOS 9.0, *) else { return }
         guard traitCollection.forceTouchCapability == .Available else { return }
 
         var force: Float = 0.0
