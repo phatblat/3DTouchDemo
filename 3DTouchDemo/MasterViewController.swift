@@ -133,3 +133,22 @@ extension MasterViewController {
     }
 
 }
+
+// MARK: - IBActions
+
+extension MasterViewController {
+
+    /// Clears out dynamic quick actions
+    @IBAction func didTapTrashButton() {
+        if #available(iOS 9.0, *) {
+            UIApplication.sharedApplication().shortcutItems = []
+
+            let message = "Dynamic quick actions have been cleared"
+            print(message)
+
+            let alertController = UIAlertController(title: nil, message: message, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+}

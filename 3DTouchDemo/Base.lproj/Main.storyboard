@@ -145,7 +145,13 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="3D Touch Demo" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="3D Touch Demo" id="Zdf-7t-Un8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="be6-EU-t8r">
+                            <connections>
+                                <action selector="didTapTrashButton" destination="7bK-jq-Zjz" id="Gog-TH-YF1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="JCs-Az-kUJ"/>
                         <segue destination="GMP-Cd-GcX" kind="showDetail" identifier="touchCanvas" id="pIo-l4-Jze"/>
