@@ -52,7 +52,10 @@ extension MasterViewController {
             return detailViewController
 
         case touchCanvasRow:
-           return storyboard?.instantiateViewControllerWithIdentifier("TouchCanvasViewController")
+            return storyboard?.instantiateViewControllerWithIdentifier("TouchCanvasViewController")
+
+        case touchCanvasRow + 1:
+            return storyboard?.instantiateViewControllerWithIdentifier("ForceProgressViewController")
 
         default:
             return nil

@@ -30,7 +30,8 @@ class MasterViewController: UITableViewController {
         PreviewDetail(title: "Small", preferredHeight: 160.0),
         PreviewDetail(title: "Medium", preferredHeight: 320.0),
         PreviewDetail(title: "Large", preferredHeight: 0.0), // 0.0 to get the default height.
-        PreviewDetail(title: "TouchCanvas", preferredHeight: 0.0)
+        PreviewDetail(title: "TouchCanvas", preferredHeight: 0.0),
+        PreviewDetail(title: "ForceProgress", preferredHeight: 0.0),
     ]
 
     let touchCanvasRow = 3
@@ -127,6 +128,8 @@ extension MasterViewController {
             performSegueWithIdentifier("showDetail", sender: self)
         case touchCanvasRow:
             performSegueWithIdentifier("touchCanvas", sender: self)
+        case touchCanvasRow + 1:
+            performSegueWithIdentifier("forceProgress", sender: self)
         default:
             print("Unhandled indexPath \(indexPath)")
         }
@@ -151,4 +154,5 @@ extension MasterViewController {
             presentViewController(alertController, animated: true, completion: nil)
         }
     }
+
 }

@@ -60,10 +60,44 @@
             </objects>
             <point key="canvasLocation" x="116.5" y="128.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Force Progress-->
+        <scene sceneID="5XY-CJ-BHB">
+            <objects>
+                <viewController storyboardIdentifier="ForceProgressViewController" title="Force Progress" id="4jm-Qp-xDd" customClass="ForceProgressViewController" customModule="_DTouchDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nxD-1D-urA"/>
+                        <viewControllerLayoutGuide type="bottom" id="1hG-XX-jDd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vGA-P3-UyA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F5d-qc-Cx7">
+                                <rect key="frame" x="30" y="61" width="315" height="2"/>
+                                <animations/>
+                            </progressView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F5d-qc-Cx7" firstAttribute="leading" secondItem="vGA-P3-UyA" secondAttribute="leading" constant="30" id="6gF-5t-RBK"/>
+                            <constraint firstItem="F5d-qc-Cx7" firstAttribute="centerX" secondItem="vGA-P3-UyA" secondAttribute="centerX" id="e4P-Et-9vz"/>
+                            <constraint firstAttribute="trailing" secondItem="F5d-qc-Cx7" secondAttribute="trailing" constant="30" id="jnG-Kz-NSE"/>
+                            <constraint firstItem="F5d-qc-Cx7" firstAttribute="top" secondItem="nxD-1D-urA" secondAttribute="bottom" constant="41" id="xDO-R9-vXi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="F5d-qc-Cx7" id="d7H-qN-DGR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OX1-q8-bdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.5" y="128.5"/>
+        </scene>
+        <!--Touch Canvas-->
         <scene sceneID="Lel-VY-FRg">
             <objects>
-                <viewController storyboardIdentifier="TouchCanvasViewController" id="GMP-Cd-GcX" customClass="ViewController" customModule="_DTouchDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TouchCanvasViewController" title="Touch Canvas" id="GMP-Cd-GcX" customClass="ViewController" customModule="_DTouchDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lyA-1e-BJC"/>
                         <viewControllerLayoutGuide type="bottom" id="MOd-qi-ZGh"/>
@@ -155,6 +189,7 @@
                     <connections>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="JCs-Az-kUJ"/>
                         <segue destination="GMP-Cd-GcX" kind="showDetail" identifier="touchCanvas" id="pIo-l4-Jze"/>
+                        <segue destination="4jm-Qp-xDd" kind="showDetail" identifier="forceProgress" id="mtj-TP-gB4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
