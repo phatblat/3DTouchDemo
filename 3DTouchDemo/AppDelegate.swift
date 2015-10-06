@@ -40,9 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var window: UIWindow?
 
-    /// Saved shortcut item used as a result of an app launch, used later when app is activated.
-    //    @available(iOS 9, *)
+    // Stored properties cannot be marked potentially unavailable with '@available'
+//    @available(iOS 9, *)
 //    var launchedShortcutItem: UIApplicationShortcutItem?
+
+    /// Saved shortcut item used as a result of an app launch, used later when app is activated.
     var launchedShortcutItem: AnyObject?
 
     // MARK: - App Lifecycle

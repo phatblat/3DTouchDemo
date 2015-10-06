@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F873CABF1BC37711003A9321 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873CABE1BC37711003A9321 /* WebViewController.swift */; };
 		F88127B11BBCE48100B6290C /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88127AD1BBCE48100B6290C /* CanvasView.swift */; };
 		F88127B21BBCE48100B6290C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88127AE1BBCE48100B6290C /* Line.swift */; };
 		F88127B31BBCE48100B6290C /* ReticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88127AF1BBCE48100B6290C /* ReticleView.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		F863CC801BBCB125009F0D0C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F873CABE1BC37711003A9321 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F88127AD1BBCE48100B6290C /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasView.swift; path = TouchCanvas/CanvasView.swift; sourceTree = "<group>"; };
 		F88127AE1BBCE48100B6290C /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = TouchCanvas/Line.swift; sourceTree = "<group>"; };
 		F88127AF1BBCE48100B6290C /* ReticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReticleView.swift; path = TouchCanvas/ReticleView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				F8F8795B1BBA18F9009EF130 /* MasterViewController+UIViewControllerPreviewing.swift */,
 				F8FB196F1BB7861A00DC8EDE /* DetailViewController.swift */,
 				F891B8201BC2168D009EE15D /* ForceProgressViewController.swift */,
+				F873CABE1BC37711003A9321 /* WebViewController.swift */,
 				F8FB19711BB7861A00DC8EDE /* Main.storyboard */,
 				F8FB19741BB7861A00DC8EDE /* Assets.xcassets */,
 				F8FB19761BB7861A00DC8EDE /* LaunchScreen.storyboard */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8FB19701BB7861A00DC8EDE /* DetailViewController.swift in Sources */,
+				F873CABF1BC37711003A9321 /* WebViewController.swift in Sources */,
 				F8FB196E1BB7861A00DC8EDE /* MasterViewController.swift in Sources */,
 				F88127B11BBCE48100B6290C /* CanvasView.swift in Sources */,
 				F88127B21BBCE48100B6290C /* Line.swift in Sources */,
