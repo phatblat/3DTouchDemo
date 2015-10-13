@@ -59,7 +59,7 @@
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeShare</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Always present</string>
+			<string></string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Static Quick Action</string>
 			<key>UIApplicationShortcutItemType</key>
