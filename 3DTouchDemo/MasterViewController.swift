@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MasterViewController: UITableViewController {
 
@@ -32,7 +33,6 @@ class MasterViewController: UITableViewController {
         PreviewDetail(title: "Large", preferredHeight: 0.0), // 0.0 to get the default height.
         PreviewDetail(title: "TouchCanvas", preferredHeight: 0.0),
         PreviewDetail(title: "ForceProgress", preferredHeight: 0.0),
-        PreviewDetail(title: "WebView", preferredHeight: 0.0),
     ]
 
     let touchCanvasRow = 3
@@ -131,8 +131,6 @@ extension MasterViewController {
             performSegueWithIdentifier("touchCanvas", sender: self)
         case touchCanvasRow + 1:
             performSegueWithIdentifier("forceProgress", sender: self)
-        case touchCanvasRow + 2:
-            performSegueWithIdentifier("webView", sender: self)
         default:
             print("Unhandled indexPath \(indexPath)")
         }
@@ -158,4 +156,30 @@ extension MasterViewController {
         }
     }
 
+    @IBAction func didTapActionButton(sender: UIBarButtonItem) {
+        guard #available(iOS 9.0, *) else { print("Poor you, still on iOS 8. Lemme guess, 16GB model?"); return }
+
+        let safari = SFSafariViewController(URL: NSURL(string: "http://freinbichler.me/apps/3dtouch/")!)
+        presentViewController(safari, animated: true, completion: nil)
+    }
+}
+
+// MARK: - SFSafariViewControllerDelegate
+
+@available(iOS 9, *)
+extension MasterViewController: SFSafariViewControllerDelegate {
+
+    func safariViewController(controller: SFSafariViewController, activityItemsForURL URL: NSURL, title: String?) -> [UIActivity] {
+        debugPrint("safariViewController:activityItemsForURL:title: \(URL) \(title)")
+
+        return []
+    }
+
+    func safariViewController(controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
+        debugPrint("safariViewController:didCompleteInitialLoad: - didLoadSuccessfully: \(didLoadSuccessfully)")
+    }
+
+    func safariViewControllerDidFinish(controller: SFSafariViewController) {
+        debugPrint("safariViewControllerDidFinish")
+    }
 }

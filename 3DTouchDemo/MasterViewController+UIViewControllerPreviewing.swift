@@ -57,9 +57,6 @@ extension MasterViewController {
         case touchCanvasRow + 1:
             return storyboard?.instantiateViewControllerWithIdentifier("ForceProgressViewController")
 
-        case touchCanvasRow + 2:
-            return storyboard?.instantiateViewControllerWithIdentifier("WebViewController")
-
         default:
             return nil
         }
