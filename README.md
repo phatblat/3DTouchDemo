@@ -17,6 +17,8 @@ An example of the various APIs which apps can use to leverage 3D Touch on the iP
   * [Dynamic Shortcut Items](https://littlebitesofcocoa.com/88)
   * [View Controller Previews](https://littlebitesofcocoa.com/80)
   * [3D Touch (force)](https://littlebitesofcocoa.com/95)
+* [JavaScript example](http://freinbichler.me/apps/3dtouch/)
+  * [Source Code](https://github.com/freinbichler/3d-touch)
 
 ## License
 
