@@ -17,6 +17,7 @@ class MasterViewController: UITableViewController {
     struct PreviewDetail {
         let title: String
         let preferredHeight: Double
+        let color: UIColor?
     }
 
     // MARK: - Properties
@@ -28,11 +29,11 @@ class MasterViewController: UITableViewController {
     var objects = [AnyObject]()
 
     let sampleData = [
-        PreviewDetail(title: "Small", preferredHeight: 160.0),
-        PreviewDetail(title: "Medium", preferredHeight: 320.0),
-        PreviewDetail(title: "Large", preferredHeight: 0.0), // 0.0 to get the default height.
-        PreviewDetail(title: "TouchCanvas", preferredHeight: 0.0),
-        PreviewDetail(title: "ForceProgress", preferredHeight: 0.0),
+        PreviewDetail(title: "Small", preferredHeight: 160.0, color: UIColor.yellowColor()),
+        PreviewDetail(title: "Medium", preferredHeight: 320.0, color: UIColor.greenColor()),
+        PreviewDetail(title: "Large", preferredHeight: 0.0, color: UIColor.blueColor()), // 0.0 to get the default height.
+        PreviewDetail(title: "TouchCanvas", preferredHeight: 0.0, color: nil),
+        PreviewDetail(title: "ForceProgress", preferredHeight: 0.0, color: nil),
     ]
 
     let touchCanvasRow = 3
@@ -95,6 +96,10 @@ extension MasterViewController {
 
             // Pass the `title` to the `detailViewController`.
             detailViewController.detailItemTitle = previewDetail.title
+
+            if let color = previewDetail.color {
+                detailViewController.view.backgroundColor = color
+            }
         }
     }
 

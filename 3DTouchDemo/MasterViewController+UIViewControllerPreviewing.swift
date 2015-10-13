@@ -45,6 +45,10 @@ extension MasterViewController {
             let previewDetail = sampleData[indexPath.row]
             detailViewController.detailItemTitle = previewDetail.title
 
+            if let color = previewDetail.color {
+                detailViewController.view.backgroundColor = color
+            }
+
             // Set the height of the preview by setting the preferred content size of the detail view controller.
             // Width should be zero, because it's not used in portrait.
             detailViewController.preferredContentSize = CGSize(width: 0.0, height: previewDetail.preferredHeight)
