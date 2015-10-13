@@ -12,12 +12,13 @@ import UIKit
 /// https://littlebitesofcocoa.com/95
 class ForceProgressViewController: UIViewController {
 
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var progressView: UIProgressView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.progress = 0.0
-        view.backgroundColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0))
+        backgroundView.backgroundColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0))
     }
 
 }
@@ -63,7 +64,7 @@ extension ForceProgressViewController {
         }
 
         progressView.progress = force
-        view.backgroundColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(force))
+        backgroundView.backgroundColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(force))
     }
 
 }

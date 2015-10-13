@@ -91,6 +91,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVM-Vg-cl0" userLabel="Background View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F5d-qc-Cx7">
                                 <rect key="frame" x="30" y="61" width="315" height="2"/>
                                 <animations/>
@@ -102,12 +107,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="F5d-qc-Cx7" firstAttribute="leading" secondItem="vGA-P3-UyA" secondAttribute="leading" constant="30" id="6gF-5t-RBK"/>
+                            <constraint firstAttribute="bottom" secondItem="kVM-Vg-cl0" secondAttribute="bottom" id="Gj9-jR-LZL"/>
                             <constraint firstItem="F5d-qc-Cx7" firstAttribute="centerX" secondItem="vGA-P3-UyA" secondAttribute="centerX" id="e4P-Et-9vz"/>
+                            <constraint firstItem="kVM-Vg-cl0" firstAttribute="leading" secondItem="vGA-P3-UyA" secondAttribute="leading" id="j4t-bq-mjL"/>
                             <constraint firstAttribute="trailing" secondItem="F5d-qc-Cx7" secondAttribute="trailing" constant="30" id="jnG-Kz-NSE"/>
+                            <constraint firstAttribute="trailing" secondItem="kVM-Vg-cl0" secondAttribute="trailing" id="twH-xT-tiq"/>
+                            <constraint firstItem="kVM-Vg-cl0" firstAttribute="top" secondItem="vGA-P3-UyA" secondAttribute="top" id="wvY-yj-voZ"/>
                             <constraint firstItem="F5d-qc-Cx7" firstAttribute="top" secondItem="nxD-1D-urA" secondAttribute="bottom" constant="41" id="xDO-R9-vXi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="kVM-Vg-cl0" id="xyc-1U-iCi"/>
                         <outlet property="progressView" destination="F5d-qc-Cx7" id="d7H-qN-DGR"/>
                     </connections>
                 </viewController>
