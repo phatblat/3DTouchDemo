@@ -56,29 +56,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.delegate = self
 
-        // Override point for customization after application launch.
-        var shouldPerformAdditionalDelegateHandling = true
+        // When false, this will block "performActionForShortcutItem:completionHandler" from being called (which seems like a silly thing to do).
+        let shouldPerformAdditionalDelegateHandling = true
 
         if #available(iOS 9, *) {
             // If a shortcut was launched, display its information and take the appropriate action
             if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem {
-
+                // Can be used to track whether you app was _launched_ from a 3D Touch quick action.
                 launchedShortcutItem = shortcutItem
-
-                // This will block "performActionForShortcutItem:completionHandler" from being called.
-                shouldPerformAdditionalDelegateHandling = false
             }
 
             // Install initial versions of our two extra dynamic shortcuts.
             if let shortcutItems = application.shortcutItems where shortcutItems.isEmpty {
                 // Construct the items.
                 let shortcut3 = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.Third.type, localizedTitle: "Play", localizedSubtitle: "Will Play an item", icon: UIApplicationShortcutIcon(type: .Play), userInfo: [
-                    AppDelegate.applicationShortcutUserInfoIconKey: UIApplicationShortcutIconType.Play.rawValue
+                        AppDelegate.applicationShortcutUserInfoIconKey: UIApplicationShortcutIconType.Play.rawValue
                     ]
                 )
 
                 let shortcut4 = UIMutableApplicationShortcutItem(type: ShortcutIdentifier.Fourth.type, localizedTitle: "Pause", localizedSubtitle: "Will Pause an item", icon: UIApplicationShortcutIcon(type: .Pause), userInfo: [
-                    AppDelegate.applicationShortcutUserInfoIconKey: UIApplicationShortcutIconType.Pause.rawValue
+                        AppDelegate.applicationShortcutUserInfoIconKey: UIApplicationShortcutIconType.Pause.rawValue
                     ]
                 )
 
@@ -90,16 +87,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return shouldPerformAdditionalDelegateHandling
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
-        guard let shortcut = launchedShortcutItem else { return }
-
-        if #available(iOS 9, *) {
-            guard let shortcut = shortcut as? UIApplicationShortcutItem else { return }
-            handleShortCutItem(shortcut)
-        }
-
-        launchedShortcutItem = nil
-    }
+//    func applicationDidBecomeActive(application: UIApplication) {
+//        guard let shortcut = launchedShortcutItem else { return }
+//
+//        if #available(iOS 9, *) {
+//            guard let shortcut = shortcut as? UIApplicationShortcutItem else { return }
+//            handleShortCutItem(shortcut)
+//        }
+//
+//        launchedShortcutItem = nil
+//    }
 
     /// Called when the user activates your application by selecting a shortcut on the home screen, except when
     /// application(_:,willFinishLaunchingWithOptions:) or application(_:didFinishLaunchingWithOptions) returns `false`.
