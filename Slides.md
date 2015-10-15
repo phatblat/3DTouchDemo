@@ -162,15 +162,25 @@ Collection Peek
 ## Segue Issues
 
 - how to pass data for selection from table/collection VC
-- no selection?
+  - prepareForSegue
+- selected indexPath?
 
-### when preview is triggered
+### prepareForSegue
 
 Get selected cell in `prepareForSegue:sender:`
 - collectionView?.indexPathsForSelectedItems() returns nil
 
-`previewingContext:viewControllerForLocation:` is called too late
+### Determine Selection When Preview is Triggered
+
+`previewingContext:viewControllerForLocation:` is called before prepareForSegue
  - collectionView?.indexPathForItemAtPoint(location)
+ - save indexPath
+ - returning nil doesn't cancel preview
+
+# Pop (aka Commit)
+
+- prepareForSegue is called again
+- don't clear selection state before 2nd call
 
 # Source
 
