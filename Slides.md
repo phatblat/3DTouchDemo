@@ -208,8 +208,7 @@ func previewActionItems() -> [UIPreviewActionItem]
 
 # New in Xcode 7.1 beta 3
 
-Interface Builder
-• Interface Builder supports enabling Peek & Pop for segues. Peek & Pop segues will be omitted when running on OS versions prior to iOS 9.1. (22886994)
+> Interface Builder supports enabling Peek & Pop for segues. Peek & Pop segues will be omitted when running on OS versions prior to iOS 9.1. (22886994)
 
 ---
 
