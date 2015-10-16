@@ -2,6 +2,13 @@
 
 An example of the various APIs which apps can use to leverage 3D Touch on the iPhone 6S and 6S Plus.
 
+# Slides
+
+Presented at [Denver Swift Heads](http://www.meetup.com/Denver-Swift-Heads/) on 2015-10-15
+
+* [PDF](Slides.pdf)
+* [Markdown](Slides.md) for [Deckset](http://decksetapp.com)
+
 # References
 
 * [3D Touch Overview](https://developer.apple.com/ios/3d-touch/)
