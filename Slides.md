@@ -1,6 +1,20 @@
+# Denver Swift Heads
+
+
+---
+
+
 # 3D Touch
 
 new on the iPhone 6s and 6s Plus
+
+---
+
+# Ben Chatelain
+
+- Kaiser Permanente
+- Every Body Walk!
+- @phatblat
 
 ---
 
@@ -41,14 +55,14 @@ Info.plist
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Static</string>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeShare</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string></string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Static Quick Action</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Static</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
 			<dict>
 				<key>secondShortcutKey1</key>
@@ -132,8 +146,6 @@ func previewingContext(previewingContext: UIViewControllerPreviewing,
 
 ### `previewingContext:viewControllerForLocation:`
 
-`_UIPreviewInteractionTouchObservingGestureRecognizer`
-
 Asks the delegate to provide a view controller for the preview.
 Returning nil cancels the preview.
 
@@ -146,7 +158,6 @@ Returning nil cancels the preview.
 ### `previewingContext:commitViewController:`
 
 Called when the "pop" gesture is triggered
-`_UIRevealGestureRecognizer`
 
 - previewingContext: `UIViewControllerPreviewing`
 - viewControllerToCommit: `UIViewController`
@@ -158,7 +169,6 @@ Called when the "pop" gesture is triggered
 
 - `UIPreviewAction` class
 - `UIPreviewActionItem` protocol
-- properties
   - title
   - style (normal, destructive, selected✔)
   - handler: closure invoked when selected
@@ -181,7 +191,6 @@ func previewActionItems() -> [UIPreviewActionItem]
 
 - `UIPreviewActionGroup` class
 - `UIPreviewActionItem` protocol
-- properties
   - title (Convention...)
   - style
   - actions: array of `UIPreviewAction`
@@ -199,16 +208,10 @@ func previewActionItems() -> [UIPreviewActionItem]
 ---
 
 
-# Source
-
-`https://github.com/phatblat/3DTouchDemo`
-
----
-
-
 # New in Xcode 7.1 beta 3
 
-> Interface Builder supports enabling Peek & Pop for segues. Peek & Pop segues will be omitted when running on OS versions prior to iOS 9.1. (22886994)
+Interface Builder
+• Interface Builder supports enabling Peek & Pop for segues. Peek & Pop segues will be omitted when running on OS versions prior to iOS 9.1. (22886994)
 
 ---
 
@@ -275,4 +278,5 @@ Get selected cell in `prepareForSegue:sender:`
 
 # Source
 
-`https://github.com/phatblat/CollectionPeek`
+- `https://github.com/phatblat/3DTouchDemo`
+- `https://github.com/phatblat/CollectionPeek`
